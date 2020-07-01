@@ -1,4 +1,4 @@
-package com.amon.javacore.ucutils;
+package com.amon.javacore.concurrentutil;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;

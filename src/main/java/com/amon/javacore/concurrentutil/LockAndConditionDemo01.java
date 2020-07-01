@@ -1,4 +1,4 @@
-package com.amon.javacore.ucutils;
+package com.amon.javacore.concurrentutil;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
