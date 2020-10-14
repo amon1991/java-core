@@ -1,6 +1,7 @@
 package com.amon.javacore.algorithm.sort;
 
 /**
+ * 选择排序
  * @author yaming.chen@siemens.com
  * Created by chenyaming on 2020/10/14.
  */
