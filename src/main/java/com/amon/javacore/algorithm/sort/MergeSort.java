@@ -77,8 +77,10 @@ public class MergeSort {
             sort(arr, left, mid);
             sort(arr, mid + 1, right);
 
-            // merge
-            merge(arr, left, mid, right);
+            // merge(仅当左侧数组最后一个元素大于右侧数组第一个元素时，进行合并操作，否则代表需要排序的数组范围已经有序)
+            if (arr[mid] > arr[mid + 1]) {
+                merge(arr, left, mid, right);
+            }
 
         }
 
