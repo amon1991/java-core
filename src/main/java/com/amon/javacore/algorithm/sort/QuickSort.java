@@ -4,6 +4,11 @@ import java.util.Random;
 
 /**
  * 快速排序
+ * 原理：
+ * 调用partition算法查找p位置，p位置代表p之前的元素都小于p，p之后的元素都大于p，然后不断递归排序p左右两侧的数组元素，直到左右元素有序为止
+ * partition算法原理：
+ * 第一步：采用随机值交换第一个元素（left）和任一元素的位置（目的，房子递归树的不平衡状态）
+ * 第二步：循环要查找p位置的数组范围，p位置从left开始，将所有小于起始left元素值的元素左移交换，并将p位置加1，否则继续循环
  *
  * @author yaming.chen@siemens.com
  * Created by chenyaming on 2020/10/16.

@@ -3,6 +3,10 @@ package com.amon.javacore.algorithm.sort;
 import com.amon.javacore.algorithm.heap.Heap;
 
 /**
+ * 堆排序
+ * 原理：
+ * 通过堆结构，先将数组元素插入堆中，然后依次取出放到正确的数组位置上即可（最小堆顺序赋值，最大堆逆序赋值）
+ *
  * @author yaming.chen@siemens.com
  * Created by chenyaming on 2020/10/28.
  */

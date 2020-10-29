@@ -2,8 +2,11 @@ package com.amon.javacore.algorithm.sort;
 
 /**
  * 选择排序
- * @author yaming.chen@siemens.com
- * Created by chenyaming on 2020/10/14.
+ * 原理：
+ * 外层从前往后循环，先保证前n个元素有序，然后将n+1向后循环比较，找到最小（最大）元素位置k，然后将n+1位置和k位置进行交换
+ *
+ *  @author yaming.chen@siemens.com
+ *  Created by chenyaming on 2020/10/15.
  */
 public class SelectionSort {
 

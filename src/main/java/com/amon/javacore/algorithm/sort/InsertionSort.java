@@ -2,6 +2,8 @@ package com.amon.javacore.algorithm.sort;
 
 /**
  * 插入排序
+ * 原理：
+ * 外层从前往后循环，先保证前n个元素有序，然后n+1个元素从后往前比较，找到自己合适的位置，并把合适位置之后的元素后移一位
  *
  * @author yaming.chen@siemens.com
  * Created by chenyaming on 2020/10/15.

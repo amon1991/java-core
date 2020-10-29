@@ -2,6 +2,10 @@ package com.amon.javacore.algorithm.sort;
 
 /**
  * 归并排序
+ * 原理：
+ * 二分递归，保证左右两侧的数组有序，然后调用merge算法
+ * merge算法：
+ * 将左右两侧的数组进行合并，排序过程需要借用新数组空间，首先将原左右侧数据都复制到新数组空间，然后通过新数组空间的元素进行比较，再将元素赋值到原数组中
  *
  * @author yaming.chen@siemens.com
  * Created by chenyaming on 2020/10/15.
@@ -18,7 +22,6 @@ public class MergeSort {
      * @param right
      */
     private static void merge(int[] arr, int left, int mid, int right) {
-
 
         // 拷贝待排序元素到临时数组（临时数据的下标从0开始)
         int[] tempArr = new int[right - left + 1];
