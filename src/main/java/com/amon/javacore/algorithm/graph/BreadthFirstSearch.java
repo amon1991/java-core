@@ -52,16 +52,16 @@ public class BreadthFirstSearch {
                     int v = queue.poll();
                     System.out.print(v + " ");
 
-                    ArrayList<Integer> relatedNodeList = graph.getRelatedNodeList(v);
+                    ArrayList<Edge> relatedNodeList = graph.getRelatedNodeList(v);
 
-                    for (Integer relatedNode : relatedNodeList) {
+                    for (Edge edge : relatedNodeList) {
 
-                        if (!visited[relatedNode]) {
+                        if (!visited[edge.getToNode()]) {
 
-                            queue.add(relatedNode);
-                            visited[relatedNode] = true;
-                            from[relatedNode] = v;
-                            group[relatedNode] = i;
+                            queue.add(edge.getToNode());
+                            visited[edge.getToNode()] = true;
+                            from[edge.getToNode()] = v;
+                            group[edge.getToNode()] = i;
 
                         }
 

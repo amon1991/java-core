@@ -64,6 +64,10 @@ public class AdjacencyMatrixGraph implements BaseGraph {
     }
 
     @Override
+    public void addWeightEdge(int from, int to, boolean directed, double weight) {
+    }
+
+    @Override
     public boolean hasEdge(int from, int to, boolean directed) {
         if (from >= 0 && from < nodeSize && to >= 0 && to < nodeSize) {
             return graph[from][to] == 1;

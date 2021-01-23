@@ -11,7 +11,7 @@ import java.util.ArrayList;
  */
 public class AdjacencyTableGraph implements BaseGraph {
 
-    private ArrayList<ArrayList<Integer>> graph;
+    private ArrayList<ArrayList<Edge>> graph;
 
     /**
      * 图中的节点数
@@ -46,7 +46,10 @@ public class AdjacencyTableGraph implements BaseGraph {
 
     @Override
     public void addEdge(int from, int to, boolean directed) {
+    }
 
+    @Override
+    public void addWeightEdge(int from, int to, boolean directed, double weight) {
         if (!(from >= 0 && from < nodeSize && to >= 0 && to < nodeSize)) {
             return;
         }
@@ -55,25 +58,25 @@ public class AdjacencyTableGraph implements BaseGraph {
             return;
         }
 
-        graph.get(from).add(to);
+        graph.get(from).add(new Edge(from, to, weight));
 
         if (!directed) {
-            graph.get(to).add(from);
+            graph.get(to).add(new Edge(to, from, weight));
         }
 
         edgeSize++;
-
     }
+
 
     @Override
     public boolean hasEdge(int from, int to, boolean directed) {
 
         if (from >= 0 && from < nodeSize && to >= 0 && to < nodeSize) {
 
-            ArrayList<Integer> list = graph.get(from);
+            ArrayList<Edge> list = graph.get(from);
 
-            for (Integer toElement : list) {
-                if (toElement.intValue() == to) {
+            for (Edge toElement : list) {
+                if (toElement.getToNode() == to) {
                     return true;
                 }
             }
@@ -92,10 +95,10 @@ public class AdjacencyTableGraph implements BaseGraph {
 
             System.out.print(i + ":");
 
-            ArrayList<Integer> list = graph.get(i);
+            ArrayList<Edge> list = graph.get(i);
 
-            for (Integer toElement : list) {
-                System.out.print(toElement + " ");
+            for (Edge edge : list) {
+                System.out.print(edge.getToNode() + "/" + edge.getWeight() + " ");
             }
 
             System.out.println();
@@ -113,7 +116,7 @@ public class AdjacencyTableGraph implements BaseGraph {
         return nodeSize;
     }
 
-    public ArrayList<Integer> getRelatedNodeList(int node) {
+    public ArrayList<Edge> getRelatedNodeList(int node) {
 
         if (node >= 0 && node < nodeSize) {
             return graph.get(node);

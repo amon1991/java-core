@@ -73,8 +73,11 @@ public class LoadGraphData {
 
                     String line = dataList.get(i);
                     String[] arr = line.split(" ");
-                    if (null != arr && arr.length == 2) {
-                        baseGraph.addEdge(Integer.valueOf(arr[0]), Integer.valueOf(arr[1]), baseGraph.directed());
+                    if (null != arr && arr.length == 3) {
+                        baseGraph.addWeightEdge(Integer.valueOf(arr[0]),
+                                Integer.valueOf(arr[1]),
+                                baseGraph.directed(),
+                                Double.valueOf(arr[2]));
                     }
 
                 }

@@ -57,15 +57,15 @@ public class DepthFirstSearch {
 
     private void dfs(int node) {
 
-        ArrayList<Integer> relatedNodeList = graph.getRelatedNodeList(node);
+        ArrayList<Edge> relatedNodeList = graph.getRelatedNodeList(node);
 
         visited[node] = true;
         group[node] = ccount;
 
-        for (Integer releatedNode : relatedNodeList) {
-            if (!visited[releatedNode]) {
-                from[releatedNode] = node;
-                dfs(releatedNode);
+        for (Edge edge : relatedNodeList) {
+            if (!visited[edge.getToNode()]) {
+                from[edge.getToNode()] = node;
+                dfs(edge.getToNode());
             }
         }
 

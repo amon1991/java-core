@@ -6,6 +6,8 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
+ * 二叉搜索树
+ *
  * @author yaming.chen@siemens.com
  * Created by chenyaming on 2020/11/30.
  */
